@@ -7,15 +7,15 @@ def get_config_cs2en():
     config['seq_len'] = 50
 
     # Number of hidden units in encoder/decoder GRU
-    config['enc_nhids'] = 1000
-    config['dec_nhids'] = 1000
+    config['enc_nhids'] = 500
+    config['dec_nhids'] = 500
 
     # Dimension of the word embedding matrix in encoder/decoder
-    config['enc_embed'] = 620
-    config['dec_embed'] = 620
+    config['enc_embed'] = 300
+    config['dec_embed'] = 300
 
     # Where to save model, this corresponds to 'prefix' in groundhog
-    config['saveto'] = 'search_model_cs2en'
+    config['saveto'] = 'search_model_fr2en'
 
     # Optimization related ----------------------------------------------------
 
@@ -48,22 +48,22 @@ def get_config_cs2en():
     # Vocabulary/dataset related ----------------------------------------------
 
     # Root directory for dataset
-    datadir = './data/'
+    datadir = '/data/lisa/exp/debrea/data/MT/data/'
 
     # Module name of the stream that will be used
     config['stream'] = 'stream'
 
     # Source and target vocabularies
-    config['src_vocab'] = datadir + 'vocab.cs-en.cs.pkl'
-    config['trg_vocab'] = datadir + 'vocab.cs-en.en.pkl'
+    config['src_vocab'] = datadir + 'vocab.fr-en.fr.pkl'
+    config['trg_vocab'] = datadir + 'vocab.fr-en.en.pkl'
 
     # Source and target datasets
-    config['src_data'] = datadir + 'news-commentary-v10.cs-en.cs.tok.shuf'
-    config['trg_data'] = datadir + 'news-commentary-v10.cs-en.en.tok.shuf'
+    config['src_data'] = datadir + 'news-commentary-v10.fr-en.fr.tok.shuf'
+    config['trg_data'] = datadir + 'news-commentary-v10.fr-en.en.tok.shuf'
 
     # Source and target vocabulary sizes, should include bos, eos, unk tokens
-    config['src_vocab_size'] = 30000
-    config['trg_vocab_size'] = 30000
+    config['src_vocab_size'] = 10000
+    config['trg_vocab_size'] = 10000
 
     # Special tokens and indexes
     config['unk_id'] = 1
@@ -80,7 +80,7 @@ def get_config_cs2en():
     config['bleu_script'] = datadir + 'multi-bleu.perl'
 
     # Validation set source file
-    config['val_set'] = datadir + 'newstest2013.cs.tok'
+    config['val_set'] = datadir + 'newstest2013.fr.tok'
 
     # Validation set gold file
     config['val_set_grndtruth'] = datadir + 'newstest2013.en.tok'
